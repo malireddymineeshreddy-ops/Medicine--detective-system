@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medicine Expiry Date Detector</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>💊 Medicine Expiry Date Detector</h1>
+    <p>Scan or upload a photo of a medicine strip/box and check if it is safe to use.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>1. Provide an image</h2>
+      <div class="row">
+        <label class="btn">
+          📁 Upload photo
+          <input type="file" id="fileInput" accept="image/*" hidden />
+        </label>
+        <button class="btn" id="cameraBtn">📷 Start camera</button>
+        <button class="btn secondary" id="captureBtn" disabled>Capture</button>
+      </div>
+      <video id="video" autoplay playsinline muted hidden></video>
+      <canvas id="canvas" hidden></canvas>
+      <img id="preview" alt="Preview" hidden />
+      <p class="hint">Tip: good light, hold steady, fill the frame with the printed EXP/MFG area.</p>
+    </section>
+
+    <section class="card">
+      <h2>2. Result</h2>
+      <div id="progressWrap" hidden>
+        <div class="bar"><div id="bar"></div></div>
+        <span id="progressText">Loading…</span>
+      </div>
+      <div id="result" class="result idle">Waiting for an image…</div>
+      <details>
+        <summary>Show text read from image</summary>
+        <pre id="rawText">—</pre>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Or enter the date manually</h2>
+      <div class="row">
+        <input type="text" id="manualInput" placeholder="e.g. EXP 08/2027 or 15-03-2026" />
+        <button class="btn" id="manualBtn">Check</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>History</h2>
+      <ul id="history"></ul>
+      <button class="btn secondary" id="clearBtn">Clear history</button>
+    </section>
+  </main>
+
+  <footer>Informational tool only. Always verify the printed date and consult a pharmacist.</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

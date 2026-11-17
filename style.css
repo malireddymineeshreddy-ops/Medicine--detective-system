@@ -1,0 +1,35 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0; font-family: system-ui, Segoe UI, Roboto, sans-serif;
+  background: #f1f5f9; color: #0f172a;
+}
+header { background: #0f766e; color: #fff; padding: 20px 16px; text-align: center; }
+header h1 { margin: 0 0 6px; font-size: 1.5rem; }
+header p { margin: 0; opacity: .9; }
+main { max-width: 760px; margin: 16px auto; padding: 0 12px; display: grid; gap: 14px; }
+.card { background: #fff; border-radius: 12px; padding: 16px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.card h2 { margin: 0 0 12px; font-size: 1.05rem; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn {
+  background: #0f766e; color: #fff; border: 0; padding: 10px 14px; border-radius: 8px;
+  cursor: pointer; font-size: .95rem; display: inline-block;
+}
+.btn:hover { background: #115e59; }
+.btn.secondary { background: #475569; }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+input[type=text] { flex: 1; min-width: 200px; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; }
+video, img#preview { width: 100%; max-height: 360px; object-fit: contain; margin-top: 12px; border-radius: 8px; background: #000; }
+.hint { color: #64748b; font-size: .85rem; margin: 10px 0 0; }
+.result { padding: 16px; border-radius: 10px; font-weight: 600; line-height: 1.5; }
+.result small { display: block; font-weight: 400; margin-top: 4px; }
+.idle { background: #e2e8f0; color: #475569; }
+.safe { background: #dcfce7; color: #166534; }
+.warn { background: #fef3c7; color: #92400e; }
+.expired { background: #fee2e2; color: #991b1b; }
+.bar { height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; margin-bottom: 6px; }
+#bar { height: 100%; width: 0; background: #0f766e; transition: width .2s; }
+#progressText { font-size: .85rem; color: #475569; }
+pre { white-space: pre-wrap; background: #f8fafc; padding: 10px; border-radius: 8px; font-size: .8rem; }
+#history { list-style: none; padding: 0; margin: 0 0 10px; }
+#history li { padding: 8px 0; border-bottom: 1px solid #e2e8f0; font-size: .9rem; display: flex; justify-content: space-between; gap: 8px; }
+footer { text-align: center; color: #64748b; font-size: .8rem; padding: 16px; }
